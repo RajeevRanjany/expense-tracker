@@ -2,7 +2,9 @@
 
 Minimal full-stack Expense Tracker built with Spring Boot.
 
-## Features
+----------------------------------------
+
+FEATURES
 
 - Create expense (amount, category, description, date)
 - View expenses
@@ -11,32 +13,55 @@ Minimal full-stack Expense Tracker built with Spring Boot.
 - Total calculation
 - Idempotent POST using Idempotency-Key header
 
-## Tech Stack
+----------------------------------------
+
+TECH STACK
 
 - Java 17
 - Spring Boot
 - Spring Data JPA
-- H2 (file-based DB)
+- H2 (file-based database)
 - Thymeleaf
 
-## Design Decisions
+----------------------------------------
 
-- Used BigDecimal for correct money handling.
-- Used Idempotency-Key header to handle retries safely.
-- Backend calculates totals to ensure correctness.
-- Simple layered architecture (Controller → Service → Repository).
+CLONE AND RUN LOCALLY
 
-## Trade-offs
+1. Clone the repository
 
-- H2 file database used for simplicity and time constraints.
-- On cloud platforms with ephemeral storage, data may not persist across restarts.
-- No pagination or authentication implemented.
+git clone https://github.com/RajeevRanjany/expense-tracker.git
+cd expense-tracker
 
-## Run Locally
+2. Run the application
 
 ./mvnw spring-boot:run
 
-Visit:
+3. Open in browser
+
 http://localhost:8080/ui
 
+----------------------------------------
 
+DESIGN DECISIONS
+
+- Used BigDecimal for correct money handling.
+- Implemented Idempotency-Key header to handle retry-safe POST requests.
+- Backend calculates totals to ensure correctness.
+- Clean layered architecture (Controller → Service → Repository).
+- H2 file database chosen for simplicity.
+
+----------------------------------------
+
+TRADE-OFFS
+
+- H2 file-based DB used due to time constraints.
+- On cloud platforms with ephemeral storage, data may not persist across restarts.
+- No pagination or authentication implemented.
+
+----------------------------------------
+
+This implementation focuses on correctness, data safety, and production-like structure within a limited timebox.
+
+Author : 
+Rajeev Ranjan
+MNNIT ALLAHABAD
